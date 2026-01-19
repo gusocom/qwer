@@ -7,19 +7,26 @@
     body {
       text-align: center;
       font-family: Arial, sans-serif;
+      margin: 20px;
     }
     h1 {
       font-size: 48px;
       margin-bottom: 40px;
     }
     figure {
-      display: inline-block; /* Para que figure se centre con body text-align */
+      display: inline-block; /* Para centrar con text-align */
       margin: 0;
     }
-    figcaption {
+    figcaption.name {
       margin-top: 10px;
       font-size: 20px;
+      font-weight: bold;
       color: #333;
+    }
+    figcaption.description {
+      margin-top: 5px;
+      font-size: 16px;
+      color: #666;
     }
   </style>
 </head>
@@ -28,15 +35,27 @@
   <!-- Título principal -->
   <h1>REPOSITORIO</h1>
 
-  <!-- Imagen con nombre debajo -->
+  <!-- Imagen con nombre y descripción centrada -->
   <figure>
     <img
       src="attractor-voronoi.png"
-      alt="ATTRACTOR VORONOI"
+      alt="NOSSEPARA"
       width="615"
       height="395"
     >
-    <figcaption>ATTRACTOR VORONOI</figcaption>
+    <figcaption class="name">NOSSEPARA</figcaption>
+    <figcaption class="Claro, aquí tienes una descripción de lo que hace tu script de Grasshopper:
+
+Este script genera un patrón de Voronoi tridimensional sobre una superficie, donde la forma y altura de las celdas están controladas por una curva de atracción.
+
+Aquí está el proceso paso a paso:
+
+Generación de Puntos: Se crean 100 puntos aleatorios sobre una superficie de entrada.
+Lógica del Atractor: El script mide la distancia de cada punto a una curva de atracción. Basándose en esta distancia, los puntos son "empujados" o "movidos".
+Creación de Voronoi: Con los puntos ya movidos, se genera un diagrama de Voronoi (un patrón de celdas poligonales) que llena la superficie original.
+Creación de Marcos: Cada celda de Voronoi se escala hacia su centro. El factor de escala depende de la distancia original del punto a la curva atractora. Luego, la celda pequeña se resta de la grande, creando un efecto de marco.
+Extrusión: Finalmente, estos marcos se extruyen en altura. La altura de la extrusión de cada marco también está controlada por la distancia a la curva atractora.
+En resumen, creas una estructura arquitectónica donde las aberturas y la altura de los componentes varían suavemente dependiendo de su proximidad a una curva que tú defines.</figcaption>
   </figure>
 
 </body>
