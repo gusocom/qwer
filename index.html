@@ -32,7 +32,7 @@
       border-radius: 10px;
       max-width: 100%;
       height: auto;
-      margin-bottom: 15px; /* Menor espacio debajo de la imagen */
+      margin-bottom: 15px;
     }
 
     figcaption {
@@ -44,28 +44,28 @@
       font-size: 24px;
       font-weight: bold;
       text-align: center;
-      margin-bottom: 10px; /* Menor espacio debajo del nombre */
+      margin-bottom: 10px;
       color: #222;
     }
 
     figcaption .description {
       font-size: 16px;
       color: #555;
-      line-height: 1.5; /* Menor espacio entre líneas */
+      line-height: 1.5;
     }
 
     figcaption .description p {
-      margin-bottom: 10px; /* Menos espacio entre párrafos */
+      margin-bottom: 10px;
       text-indent: 25px;
     }
 
     figcaption .description ul {
       padding-left: 20px;
-      margin-top: 5px; /* Menor espacio antes de la lista */
+      margin-top: 5px;
     }
 
     figcaption .description ul li {
-      margin-bottom: 6px; /* Menos espacio entre viñetas */
+      margin-bottom: 6px;
       position: relative;
       padding-left: 15px;
     }
@@ -76,6 +76,25 @@
       left: 0;
       color: #ff6f61;
       font-weight: bold;
+    }
+
+    /* Estilo del botón de descarga */
+    .download-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #ff6f61;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .download-button:hover {
+      background-color: #e65b50;
+      transform: translateY(-2px);
     }
 
   </style>
@@ -103,6 +122,9 @@
           <li><strong>Extrusión:</strong> Finalmente, estos marcos se extruyen en altura. La altura de la extrusión de cada marco también está controlada por la distancia a la curva atractora.</li>
         </ul>
         <p>En resumen, creas una estructura arquitectónica donde las aberturas y la altura de los componentes varían suavemente dependiendo de su proximidad a una curva que tú defines.</p>
+
+        <!-- Botón de descarga -->
+        <a href="ATTRACTOR VORONOI.rar" download class="download-button">Descargar archivo</a>
       </div>
     </figcaption>
   </figure>
