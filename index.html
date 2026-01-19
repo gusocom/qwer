@@ -8,7 +8,7 @@
       text-align: center;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 20px;
-      background-color: #f9f9f9;
+      background-color: #f0f2f5;
       color: #333;
     }
 
@@ -22,25 +22,28 @@
       margin: 0;
       text-align: center;
       background-color: #fff;
-      padding: 20px;
+      padding: 25px 30px;
       border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      max-width: 700px;
+    }
+
+    img {
+      border-radius: 10px;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
     }
 
     figcaption {
-      margin-top: 15px;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left; /* Para párrafo más profesional */
-      white-space: pre-wrap; /* Respeta saltos de línea */
+      text-align: left;
+      white-space: pre-wrap;
     }
 
     figcaption .name {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: bold;
-      display: block;
-      text-align: center; /* Nombre centrado */
+      text-align: center;
       margin-bottom: 15px;
       color: #222;
     }
@@ -48,15 +51,34 @@
     figcaption .description {
       font-size: 16px;
       color: #555;
-      line-height: 1.6; /* Espaciado entre líneas */
-      text-indent: 25px; /* Sangría inicial de párrafo */
+      line-height: 1.7;
     }
 
-    img {
-      border-radius: 10px;
-      max-width: 100%;
-      height: auto;
+    /* Estilo moderno para listas */
+    figcaption .description ul {
+      padding-left: 20px;
+      margin-top: 10px;
     }
+
+    figcaption .description ul li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 15px;
+    }
+
+    figcaption .description ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #ff6f61; /* Color de la viñeta */
+      font-weight: bold;
+    }
+
+    figcaption .description p {
+      margin-bottom: 15px;
+      text-indent: 25px; /* Sangría inicial */
+    }
+
   </style>
 </head>
 <body>
@@ -72,21 +94,17 @@
     >
     <figcaption>
       <span class="name">NOSSEPARA</span>
-      <span class="description">
-Claro, aquí tienes una descripción de lo que hace tu script de Grasshopper:
-
-Este script genera un patrón de Voronoi tridimensional sobre una superficie, donde la forma y altura de las celdas están controladas por una curva de atracción.
-
-Aquí está el proceso paso a paso:
-
-1. Generación de Puntos: Se crean 100 puntos aleatorios sobre una superficie de entrada.  
-2. Lógica del Atractor: El script mide la distancia de cada punto a una curva de atracción. Basándose en esta distancia, los puntos son "empujados" o "movidos".  
-3. Creación de Voronoi: Con los puntos ya movidos, se genera un diagrama de Voronoi (un patrón de celdas poligonales) que llena la superficie original.  
-4. Creación de Marcos: Cada celda de Voronoi se escala hacia su centro. El factor de escala depende de la distancia original del punto a la curva atractora. Luego, la celda pequeña se resta de la grande, creando un efecto de marco.  
-5. Extrusión: Finalmente, estos marcos se extruyen en altura. La altura de la extrusión de cada marco también está controlada por la distancia a la curva atractora.
-
-En resumen, creas una estructura arquitectónica donde las aberturas y la altura de los componentes varían suavemente dependiendo de su proximidad a una curva que tú defines.
-      </span>
+      <div class="description">
+        <p>Este script genera un patrón de Voronoi tridimensional sobre una superficie, donde la forma y altura de las celdas están controladas por una curva de atracción. Aquí está el proceso paso a paso:</p>
+        <ul>
+          <li><strong>Generación de Puntos:</strong> Se crean 100 puntos aleatorios sobre una superficie de entrada.</li>
+          <li><strong>Lógica del Atractor:</strong> El script mide la distancia de cada punto a una curva de atracción. Basándose en esta distancia, los puntos son "empujados" o "movidos".</li>
+          <li><strong>Creación de Voronoi:</strong> Con los puntos ya movidos, se genera un diagrama de Voronoi (un patrón de celdas poligonales) que llena la superficie original.</li>
+          <li><strong>Creación de Marcos:</strong> Cada celda de Voronoi se escala hacia su centro. El factor de escala depende de la distancia original del punto a la curva atractora. Luego, la celda pequeña se resta de la grande, creando un efecto de marco.</li>
+          <li><strong>Extrusión:</strong> Finalmente, estos marcos se extruyen en altura. La altura de la extrusión de cada marco también está controlada por la distancia a la curva atractora.</li>
+        </ul>
+        <p>En resumen, creas una estructura arquitectónica donde las aberturas y la altura de los componentes varían suavemente dependiendo de su proximidad a una curva que tú defines.</p>
+      </div>
     </figcaption>
   </figure>
 
