@@ -3,113 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>REPOSITORIO</title>
-  <style>
-    body {
-      text-align: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 20px;
-      background-color: #f0f2f5;
-      color: #333;
-    }
-
-    h1 {
-      font-size: 48px;
-      margin-bottom: 40px;
-    }
-
-    figure {
-      display: inline-block;
-      margin: 0;
-      text-align: center;
-      background-color: #fff;
-      padding: 25px 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-      max-width: 700px;
-    }
-
-    img {
-      border-radius: 10px;
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 15px;
-    }
-
-    figcaption {
-      text-align: left;
-      white-space: pre-wrap;
-    }
-
-    figcaption .name {
-      font-size: 24px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 10px;
-      color: #222;
-    }
-
-    figcaption .description {
-      font-size: 16px;
-      color: #555;
-      line-height: 1.5;
-    }
-
-    figcaption .description p {
-      margin-bottom: 10px;
-      text-indent: 25px;
-    }
-
-    figcaption .description ul {
-      padding-left: 20px;
-      margin-top: 5px;
-    }
-
-    figcaption .description ul li {
-      margin-bottom: 6px;
-      position: relative;
-      padding-left: 15px;
-    }
-
-    figcaption .description ul li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #ff6f61;
-      font-weight: bold;
-    }
-
-    /* Estilo del botón de descarga */
-    .download-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background-color: #ff6f61;
-      color: #fff;
-      font-weight: bold;
-      font-size: 16px;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-
-    .download-button:hover {
-      background-color: #e65b50;
-      transform: translateY(-2px);
-    }
-
-  </style>
+  <!-- Enlazamos el CSS externo -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <h1>REPOSITORIO</h1>
 
   <figure>
-    <img
-      src="attractor-voronoi.png"
-      alt="NOSSEPARA"
-      width="615"
-      height="395"
-    >
+    <img src="attractor-voronoi.png" alt="NOSSEPARA" width="615" height="395">
     <figcaption>
       <span class="name">NOSSEPARA</span>
       <div class="description">
@@ -122,8 +24,6 @@
           <li><strong>Extrusión:</strong> Finalmente, estos marcos se extruyen en altura. La altura de la extrusión de cada marco también está controlada por la distancia a la curva atractora.</li>
         </ul>
         <p>En resumen, creas una estructura arquitectónica donde las aberturas y la altura de los componentes varían suavemente dependiendo de su proximidad a una curva que tú defines.</p>
-
-        <!-- Botón de descarga -->
         <a href="ATTRACTOR VORONOI.rar" download class="download-button">Descargar archivo</a>
       </div>
     </figcaption>
