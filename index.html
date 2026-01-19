@@ -6,31 +6,56 @@
   <style>
     body {
       text-align: center;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
     }
+
     h1 {
       font-size: 48px;
       margin-bottom: 40px;
     }
+
     figure {
-      display: inline-block; /* Para centrar */
+      display: inline-block;
       margin: 0;
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
+
     figcaption {
-      margin-top: 10px;
-      color: #333;
+      margin-top: 15px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left; /* Para párrafo más profesional */
+      white-space: pre-wrap; /* Respeta saltos de línea */
     }
+
     figcaption .name {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: bold;
       display: block;
-      margin-bottom: 5px;
+      text-align: center; /* Nombre centrado */
+      margin-bottom: 15px;
+      color: #222;
     }
+
     figcaption .description {
       font-size: 16px;
-      color: #666;
-      display: block;
+      color: #555;
+      line-height: 1.6; /* Espaciado entre líneas */
+      text-indent: 25px; /* Sangría inicial de párrafo */
+    }
+
+    img {
+      border-radius: 10px;
+      max-width: 100%;
+      height: auto;
     }
   </style>
 </head>
@@ -47,18 +72,21 @@
     >
     <figcaption>
       <span class="name">NOSSEPARA</span>
-      <span class="description">Claro, aquí tienes una descripción de lo que hace tu script de Grasshopper:
+      <span class="description">
+Claro, aquí tienes una descripción de lo que hace tu script de Grasshopper:
 
 Este script genera un patrón de Voronoi tridimensional sobre una superficie, donde la forma y altura de las celdas están controladas por una curva de atracción.
 
 Aquí está el proceso paso a paso:
 
-Generación de Puntos: Se crean 100 puntos aleatorios sobre una superficie de entrada.
-Lógica del Atractor: El script mide la distancia de cada punto a una curva de atracción. Basándose en esta distancia, los puntos son "empujados" o "movidos".
-Creación de Voronoi: Con los puntos ya movidos, se genera un diagrama de Voronoi (un patrón de celdas poligonales) que llena la superficie original.
-Creación de Marcos: Cada celda de Voronoi se escala hacia su centro. El factor de escala depende de la distancia original del punto a la curva atractora. Luego, la celda pequeña se resta de la grande, creando un efecto de marco.
-Extrusión: Finalmente, estos marcos se extruyen en altura. La altura de la extrusión de cada marco también está controlada por la distancia a la curva atractora.
-En resumen, creas una estructura arquitectónica donde las aberturas y la altura de los componentes varían suavemente dependiendo de su proximidad a una curva que tú defines.</span>
+1. Generación de Puntos: Se crean 100 puntos aleatorios sobre una superficie de entrada.  
+2. Lógica del Atractor: El script mide la distancia de cada punto a una curva de atracción. Basándose en esta distancia, los puntos son "empujados" o "movidos".  
+3. Creación de Voronoi: Con los puntos ya movidos, se genera un diagrama de Voronoi (un patrón de celdas poligonales) que llena la superficie original.  
+4. Creación de Marcos: Cada celda de Voronoi se escala hacia su centro. El factor de escala depende de la distancia original del punto a la curva atractora. Luego, la celda pequeña se resta de la grande, creando un efecto de marco.  
+5. Extrusión: Finalmente, estos marcos se extruyen en altura. La altura de la extrusión de cada marco también está controlada por la distancia a la curva atractora.
+
+En resumen, creas una estructura arquitectónica donde las aberturas y la altura de los componentes varían suavemente dependiendo de su proximidad a una curva que tú defines.
+      </span>
     </figcaption>
   </figure>
 
