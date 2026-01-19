@@ -32,7 +32,7 @@
       border-radius: 10px;
       max-width: 100%;
       height: auto;
-      margin-bottom: 20px;
+      margin-bottom: 15px; /* Menor espacio debajo de la imagen */
     }
 
     figcaption {
@@ -44,24 +44,28 @@
       font-size: 24px;
       font-weight: bold;
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 10px; /* Menor espacio debajo del nombre */
       color: #222;
     }
 
     figcaption .description {
       font-size: 16px;
       color: #555;
-      line-height: 1.7;
+      line-height: 1.5; /* Menor espacio entre líneas */
     }
 
-    /* Estilo moderno para listas */
+    figcaption .description p {
+      margin-bottom: 10px; /* Menos espacio entre párrafos */
+      text-indent: 25px;
+    }
+
     figcaption .description ul {
       padding-left: 20px;
-      margin-top: 10px;
+      margin-top: 5px; /* Menor espacio antes de la lista */
     }
 
     figcaption .description ul li {
-      margin-bottom: 10px;
+      margin-bottom: 6px; /* Menos espacio entre viñetas */
       position: relative;
       padding-left: 15px;
     }
@@ -70,13 +74,8 @@
       content: "•";
       position: absolute;
       left: 0;
-      color: #ff6f61; /* Color de la viñeta */
+      color: #ff6f61;
       font-weight: bold;
-    }
-
-    figcaption .description p {
-      margin-bottom: 15px;
-      text-indent: 25px; /* Sangría inicial */
     }
 
   </style>
