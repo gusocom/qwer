@@ -14,28 +14,30 @@
       margin-bottom: 40px;
     }
     figure {
-      display: inline-block; /* Para centrar con text-align */
+      display: inline-block; /* Para centrar */
       margin: 0;
     }
-    figcaption.name {
+    figcaption {
       margin-top: 10px;
-      font-size: 20px;
-      font-weight: bold;
       color: #333;
     }
-    figcaption.description {
-      margin-top: 5px;
+    figcaption .name {
+      font-size: 20px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    figcaption .description {
       font-size: 16px;
       color: #666;
+      display: block;
     }
   </style>
 </head>
 <body>
 
-  <!-- Título principal -->
   <h1>REPOSITORIO</h1>
 
-  <!-- Imagen con nombre y descripción centrada -->
   <figure>
     <img
       src="attractor-voronoi.png"
@@ -43,8 +45,9 @@
       width="615"
       height="395"
     >
-    <figcaption class="name">NOSSEPARA</figcaption>
-    <figcaption class="Claro, aquí tienes una descripción de lo que hace tu script de Grasshopper:
+    <figcaption>
+      <span class="name">NOSSEPARA</span>
+      <span class="description">Claro, aquí tienes una descripción de lo que hace tu script de Grasshopper:
 
 Este script genera un patrón de Voronoi tridimensional sobre una superficie, donde la forma y altura de las celdas están controladas por una curva de atracción.
 
@@ -55,7 +58,8 @@ Lógica del Atractor: El script mide la distancia de cada punto a una curva de a
 Creación de Voronoi: Con los puntos ya movidos, se genera un diagrama de Voronoi (un patrón de celdas poligonales) que llena la superficie original.
 Creación de Marcos: Cada celda de Voronoi se escala hacia su centro. El factor de escala depende de la distancia original del punto a la curva atractora. Luego, la celda pequeña se resta de la grande, creando un efecto de marco.
 Extrusión: Finalmente, estos marcos se extruyen en altura. La altura de la extrusión de cada marco también está controlada por la distancia a la curva atractora.
-En resumen, creas una estructura arquitectónica donde las aberturas y la altura de los componentes varían suavemente dependiendo de su proximidad a una curva que tú defines.</figcaption>
+En resumen, creas una estructura arquitectónica donde las aberturas y la altura de los componentes varían suavemente dependiendo de su proximidad a una curva que tú defines.</span>
+    </figcaption>
   </figure>
 
 </body>
