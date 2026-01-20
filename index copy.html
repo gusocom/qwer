@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Básica Responsive</title>
+
+<style>
+/* ======================
+   FUENTE PERSONALIZADA
+====================== */
+@font-face {
+    font-family: 'Pix32';
+    src: url('fonts/Pix32.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    font-family: 'Pix32', sans-serif;
+    background: #f4f4f4;
+    color: #333; /* texto principal en gris oscuro */
+}
+
+/* ======================
+   CONTENEDOR
+====================== */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ======================
+   CARD
+====================== */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    max-width: 400px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.content {
+    padding: 20px;
+    flex: 1;
+}
+
+.content h1 {
+    margin-top: 0;
+    color: #222; /* gris más oscuro para títulos */
+}
+
+.content p {
+    color: #555; /* gris medio para párrafos */
+}
+
+.download {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #888; /* gris para botón */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.download:hover {
+    background: #555; /* gris más oscuro al hover */
+}
+
+/* ======================
+   LIGHTBOX CENTRADO CON ANIMACIÓN
+====================== */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+.lightbox a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    animation: zoomIn 0.3s ease-in-out;
+}
+
+/* Botón de cerrar */
+.lightbox a::after {
+    content: "✕";
+    position: absolute;
+    top: -30px;
+    right: 0;
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ======================
+   ANIMACIONES
+====================== */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.7);}
+    to {transform: scale(1);}
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card img {
+        max-width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <!-- Imagen pequeña -->
+        <a href="#img1">
+            <img src="attractor-voronoi.png" alt="Imagen ejemplo">
+        </a>
+
+        <div class="content">
+            <h1>Título del Proyecto</h1>
+            <p>
+                Template web responsive con imagen ampliable centrada,
+                animación CSS y enlace de descarga, usando la fuente Pix32
+                y colores de texto en escala de grises.
+            </p>
+
+            <!-- Link de descarga -->
+            <a class="download" href="archivo.pdf" download>
+                Descargar archivo
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Imagen ampliada -->
+<div id="img1" class="lightbox">
+    <a href="#">
+        <img src="attractor-voronoi.png" alt="Imagen ampliada">
+    </a>
+</div>
+
+</body>
+</html>
