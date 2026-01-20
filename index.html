@@ -38,10 +38,6 @@ body {
     flex: 1;
 }
 
-.content h1 {
-    margin-top: 0;
-}
-
 .download {
     display: inline-block;
     margin-top: 15px;
@@ -56,12 +52,25 @@ body {
     background: #0056b3;
 }
 
-/* LIGHTBOX */
+/* ======================
+   LIGHTBOX CENTRADO
+====================== */
 .lightbox {
-    display: none;
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.8);
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+.lightbox a {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -69,10 +78,7 @@ body {
 .lightbox img {
     max-width: 90%;
     max-height: 90%;
-}
-
-.lightbox:target {
-    display: flex;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 /* Responsive */
@@ -101,12 +107,12 @@ body {
         <div class="content">
             <h1>Título del Proyecto</h1>
             <p>
-                Diseño web básico responsive.  
-                Haz clic en la imagen para ampliarla y usa el botón para descargar el archivo.
+                Template web básico responsive con imagen ampliable
+                centrada y enlace de descarga, sin usar plugins.
             </p>
 
             <!-- Link de descarga -->
-            <a class="download" href="ATTRACTOR VORONOI.rar" download>
+            <a class="download" href="archivo.pdf" download>
                 Descargar archivo
             </a>
         </div>
