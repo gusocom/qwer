@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galería Vertical</title>
+<title>Galería Vertical Premium</title>
 
 <style>
 /* ======================
@@ -22,6 +22,30 @@ body {
     font-family: 'Pix32', sans-serif;
     background: #f4f4f4;
     color: #333;
+}
+
+/* ======================
+   HEADER
+====================== */
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    gap: 15px;
+}
+
+header img {
+    height: 50px;
+    width: auto;
+    cursor: pointer;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #222;
 }
 
 /* ======================
@@ -67,7 +91,7 @@ body {
     padding: 15px;
 }
 
-.content h1 {
+.content h2 {
     margin-top: 0;
     color: #222;
 }
@@ -92,16 +116,18 @@ body {
 }
 
 /* ======================
-   LIGHTBOX
+   LIGHTBOX PREMIUM
 ====================== */
 .lightbox {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
     display: none;
     justify-content: center;
     align-items: center;
     animation: fadeIn 0.3s ease-in-out;
+    z-index: 1000;
 }
 
 .lightbox:target {
@@ -118,17 +144,18 @@ body {
 .lightbox img {
     max-width: 90%;
     max-height: 90%;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
     border-radius: 8px;
     animation: zoomIn 0.3s ease-in-out;
 }
 
+/* Botón cerrar */
 .lightbox a::after {
     content: "✕";
     position: absolute;
-    top: -30px;
+    top: -35px;
     right: 0;
-    font-size: 30px;
+    font-size: 32px;
     color: #fff;
     text-decoration: none;
 }
@@ -150,6 +177,11 @@ body {
    RESPONSIVE
 ====================== */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
     .card {
         width: 100%;
     }
@@ -159,6 +191,15 @@ body {
 
 <body>
 
+<!-- HEADER CON LOGO Y TITULO -->
+<header>
+    <a href="https://tusitio.com">
+        <img src="logo.png" alt="Logo">
+    </a>
+    <h1>Mi Galería de Proyectos</h1>
+</header>
+
+<!-- CONTENEDOR VERTICAL -->
 <div class="container">
 
     <!-- TARJETA 1 -->
@@ -167,7 +208,7 @@ body {
             <img src="attractor-voronoi.png" alt="Imagen 1">
         </a>
         <div class="content">
-            <h1>Proyecto 1</h1>
+            <h2>Proyecto 1</h2>
             <p>Descripción de la primera imagen.</p>
             <a class="download" href="archivo1.pdf" download>Descargar archivo</a>
         </div>
@@ -179,7 +220,7 @@ body {
             <img src="attractor-voronoi.png" alt="Imagen 2">
         </a>
         <div class="content">
-            <h1>Proyecto 2</h1>
+            <h2>Proyecto 2</h2>
             <p>Descripción de la segunda imagen.</p>
             <a class="download" href="archivo2.pdf" download>Descargar archivo</a>
         </div>
@@ -191,7 +232,7 @@ body {
             <img src="attractor-voronoi.png" alt="Imagen 3">
         </a>
         <div class="content">
-            <h1>Proyecto 3</h1>
+            <h2>Proyecto 3</h2>
             <p>Descripción de la tercera imagen.</p>
             <a class="download" href="archivo3.pdf" download>Descargar archivo</a>
         </div>
@@ -203,7 +244,7 @@ body {
             <img src="attractor-voronoi.png" alt="Imagen 4">
         </a>
         <div class="content">
-            <h1>Proyecto 4</h1>
+            <h2>Proyecto 4</h2>
             <p>Descripción de la cuarta imagen.</p>
             <a class="download" href="archivo4.pdf" download>Descargar archivo</a>
         </div>
@@ -212,7 +253,7 @@ body {
 </div>
 
 <!-- ======================
-   LIGHTBOX
+   LIGHTBOX PARA CADA IMAGEN
 ====================== -->
 
 <div id="img1" class="lightbox">
