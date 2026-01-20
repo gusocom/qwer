@@ -1,52 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>ESPACIO PARAMETRICO</title>
-  <!-- Enlazamos el CSS externo -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Básica Responsive</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            max-width: 400px;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .content h1 {
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+            }
+
+            .card img {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <h1>ESPACIO PARAMETRICO</h1>
-
-  <figure>
-    <img src="attractor-voronoi.png" alt="VORONIO" width="615" height="395">
-    <figcaption>
-      <span class="name">VORONIO</span>
-      <div class="description">
-        <p>Este script genera un patrón de Voronoi tridimensional sobre una superficie, donde la forma y altura de las celdas están controladas por una curva de atracción. Aquí está el proceso paso a paso:</p>
-        <ul>
-          <li><strong>Generación de Puntos:</strong> Se crean 100 puntos aleatorios sobre una superficie de entrada.</li>
-          <li><strong>Lógica del Atractor:</strong> El script mide la distancia de cada punto a una curva de atracción. Basándose en esta distancia, los puntos son "empujados" o "movidos".</li>
-          <li><strong>Creación de Voronoi:</strong> Con los puntos ya movidos, se genera un diagrama de Voronoi (un patrón de celdas poligonales) que llena la superficie original.</li>
-          <li><strong>Creación de Marcos:</strong> Cada celda de Voronoi se escala hacia su centro. El factor de escala depende de la distancia original del punto a la curva atractora. Luego, la celda pequeña se resta de la grande, creando un efecto de marco.</li>
-          <li><strong>Extrusión:</strong> Finalmente, estos marcos se extruyen en altura. La altura de la extrusión de cada marco también está controlada por la distancia a la curva atractora.</li>
-        </ul>
-        <p>En resumen, creas una estructura arquitectónica donde las aberturas y la altura de los componentes varían suavemente dependiendo de su proximidad a una curva que tú defines.</p>
-        <a href="ATTRACTOR VORONOI.rar" download class="download-button">Descargar archivo</a>
-      </div>
-    </figcaption>
-  </figure>
-
-    <figure>
-    <img src="attractor-voronoi.png" alt="VORONIO" width="615" height="395">
-    <figcaption>
-      <span class="name">VORONIO</span>
-      <div class="description">
-        <p>Este script genera un patrón de Voronoi tridimensional sobre una superficie, donde la forma y altura de las celdas están controladas por una curva de atracción. Aquí está el proceso paso a paso:</p>
-        <ul>
-          <li><strong>Generación de Puntos:</strong> Se crean 100 puntos aleatorios sobre una superficie de entrada.</li>
-          <li><strong>Lógica del Atractor:</strong> El script mide la distancia de cada punto a una curva de atracción. Basándose en esta distancia, los puntos son "empujados" o "movidos".</li>
-          <li><strong>Creación de Voronoi:</strong> Con los puntos ya movidos, se genera un diagrama de Voronoi (un patrón de celdas poligonales) que llena la superficie original.</li>
-          <li><strong>Creación de Marcos:</strong> Cada celda de Voronoi se escala hacia su centro. El factor de escala depende de la distancia original del punto a la curva atractora. Luego, la celda pequeña se resta de la grande, creando un efecto de marco.</li>
-          <li><strong>Extrusión:</strong> Finalmente, estos marcos se extruyen en altura. La altura de la extrusión de cada marco también está controlada por la distancia a la curva atractora.</li>
-        </ul>
-        <p>En resumen, creas una estructura arquitectónica donde las aberturas y la altura de los componentes varían suavemente dependiendo de su proximidad a una curva que tú defines.</p>
-        <a href="ATTRACTOR VORONOI.rar" download class="download-button">Descargar archivo</a>
-      </div>
-    </figcaption>
-  </figure>
+    <div class="container">
+        <div class="card">
+            <img src="attractor-voronoi.png" alt="Imagen de ejemplo">
+            <div class="content">
+                <h1>Título del Proyecto</h1>
+                <p>
+                    Esta es una descripción básica del contenido. 
+                    El diseño es responsive y se adapta automáticamente
+                    a móviles, tablets y escritorio sin usar plugins.
+                </p>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
