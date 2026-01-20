@@ -1,72 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Básica Responsive</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Básica Responsive</title>
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
 
-        .card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-wrap: wrap;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
 
-        .card img {
-            width: 100%;
-            max-width: 400px;
-            object-fit: cover;
-        }
+.card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
-        .content {
-            padding: 20px;
-            flex: 1;
-        }
+.card img {
+    width: 100%;
+    max-width: 400px;
+    cursor: pointer;
+}
 
-        .content h1 {
-            margin-top: 0;
-        }
+.content {
+    padding: 20px;
+    flex: 1;
+}
 
-        @media (max-width: 768px) {
-            .card {
-                flex-direction: column;
-            }
+.content h1 {
+    margin-top: 0;
+}
 
-            .card img {
-                max-width: 100%;
-            }
-        }
-    </style>
+.download {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.download:hover {
+    background: #0056b3;
+}
+
+/* LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card img {
+        max-width: 100%;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        <div class="card">
-            <img src="attractor-voronoi.png" alt="Imagen de ejemplo">
-            <div class="content">
-                <h1>Título del Proyecto</h1>
-                <p>
-                    Esta es una descripción básica del contenido. 
-                    El diseño es responsive y se adapta automáticamente
-                    a móviles, tablets y escritorio sin usar plugins.
-                </p>
-            </div>
+<div class="container">
+    <div class="card">
+
+        <!-- Imagen pequeña -->
+        <a href="#img1">
+            <img src="https://via.placeholder.com/400x300" alt="Imagen ejemplo">
+        </a>
+
+        <div class="content">
+            <h1>Título del Proyecto</h1>
+            <p>
+                Diseño web básico responsive.  
+                Haz clic en la imagen para ampliarla y usa el botón para descargar el archivo.
+            </p>
+
+            <!-- Link de descarga -->
+            <a class="download" href="archivo.pdf" download>
+                Descargar archivo
+            </a>
         </div>
     </div>
+</div>
+
+<!-- Imagen ampliada -->
+<div id="img1" class="lightbox">
+    <a href="#">
+        <img src="https://via.placeholder.com/800x600" alt="Imagen ampliada">
+    </a>
+</div>
 
 </body>
 </html>
