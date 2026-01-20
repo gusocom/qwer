@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galería Responsive</title>
+<title>Galería Horizontal</title>
 
 <style>
 /* ======================
@@ -22,28 +22,43 @@ body {
     font-family: 'Pix32', sans-serif;
     background: #f4f4f4;
     color: #333;
+    overflow-x: hidden;
 }
 
 /* ======================
-   CONTENEDOR
+   GALERÍA HORIZONTAL
 ====================== */
 .container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    overflow-x: auto;
     gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: #f4f4f4;
 }
 
 /* ======================
-   CARD
+   TARJETA
 ====================== */
 .card {
+    min-width: 300px;
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex-shrink: 0;
     transition: transform 0.3s;
 }
 
@@ -121,7 +136,6 @@ body {
     animation: zoomIn 0.3s ease-in-out;
 }
 
-/* Botón cerrar */
 .lightbox a::after {
     content: "✕";
     position: absolute;
@@ -149,8 +163,8 @@ body {
    RESPONSIVE
 ====================== */
 @media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
+    .card {
+        min-width: 250px;
     }
 }
 </style>
@@ -211,7 +225,7 @@ body {
 </div>
 
 <!-- ======================
-   LIGHTBOX PARA CADA IMAGEN
+   LIGHTBOX
 ====================== -->
 
 <div id="img1" class="lightbox">
