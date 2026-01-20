@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Web Básica Responsive</title>
+<title>Galería Responsive</title>
 
 <style>
 /* ======================
@@ -21,7 +21,7 @@ body {
     margin: 0;
     font-family: 'Pix32', sans-serif;
     background: #f4f4f4;
-    color: #333; /* texto principal en gris oscuro */
+    color: #333;
 }
 
 /* ======================
@@ -31,6 +31,9 @@ body {
     max-width: 1000px;
     margin: auto;
     padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 /* ======================
@@ -40,14 +43,16 @@ body {
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
 }
 
 .card img {
     width: 100%;
-    max-width: 400px;
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -57,24 +62,23 @@ body {
 }
 
 .content {
-    padding: 20px;
-    flex: 1;
+    padding: 15px;
 }
 
 .content h1 {
     margin-top: 0;
-    color: #222; /* gris más oscuro para títulos */
+    color: #222;
 }
 
 .content p {
-    color: #555; /* gris medio para párrafos */
+    color: #555;
 }
 
 .download {
     display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #888; /* gris para botón */
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #888;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -82,11 +86,11 @@ body {
 }
 
 .download:hover {
-    background: #555; /* gris más oscuro al hover */
+    background: #555;
 }
 
 /* ======================
-   LIGHTBOX CENTRADO CON ANIMACIÓN
+   LIGHTBOX
 ====================== */
 .lightbox {
     position: fixed;
@@ -117,7 +121,7 @@ body {
     animation: zoomIn 0.3s ease-in-out;
 }
 
-/* Botón de cerrar */
+/* Botón cerrar */
 .lightbox a::after {
     content: "✕";
     position: absolute;
@@ -145,12 +149,8 @@ body {
    RESPONSIVE
 ====================== */
 @media (max-width: 768px) {
-    .card {
-        flex-direction: column;
-    }
-
-    .card img {
-        max-width: 100%;
+    .container {
+        grid-template-columns: 1fr;
     }
 }
 </style>
@@ -159,34 +159,75 @@ body {
 <body>
 
 <div class="container">
+
+    <!-- TARJETA 1 -->
     <div class="card">
-
-        <!-- Imagen pequeña -->
         <a href="#img1">
-            <img src="attractor-voronoi.png" alt="Imagen ejemplo">
+            <img src="attractor-voronoi.png" alt="Imagen 1">
         </a>
-
         <div class="content">
-            <h1>Título del Proyecto</h1>
-            <p>
-                Template web responsive con imagen ampliable centrada,
-                animación CSS y enlace de descarga, usando la fuente Pix32
-                y colores de texto en escala de grises.
-            </p>
-
-            <!-- Link de descarga -->
-            <a class="download" href="archivo.pdf" download>
-                Descargar archivo
-            </a>
+            <h1>Proyecto 1</h1>
+            <p>Descripción de la primera imagen.</p>
+            <a class="download" href="archivo1.pdf" download>Descargar archivo</a>
         </div>
     </div>
+
+    <!-- TARJETA 2 -->
+    <div class="card">
+        <a href="#img2">
+            <img src="attractor-voronoi.png" alt="Imagen 2">
+        </a>
+        <div class="content">
+            <h1>Proyecto 2</h1>
+            <p>Descripción de la segunda imagen.</p>
+            <a class="download" href="archivo2.pdf" download>Descargar archivo</a>
+        </div>
+    </div>
+
+    <!-- TARJETA 3 -->
+    <div class="card">
+        <a href="#img3">
+            <img src="attractor-voronoi.png" alt="Imagen 3">
+        </a>
+        <div class="content">
+            <h1>Proyecto 3</h1>
+            <p>Descripción de la tercera imagen.</p>
+            <a class="download" href="archivo3.pdf" download>Descargar archivo</a>
+        </div>
+    </div>
+
+    <!-- TARJETA 4 -->
+    <div class="card">
+        <a href="#img4">
+            <img src="attractor-voronoi.png" alt="Imagen 4">
+        </a>
+        <div class="content">
+            <h1>Proyecto 4</h1>
+            <p>Descripción de la cuarta imagen.</p>
+            <a class="download" href="archivo4.pdf" download>Descargar archivo</a>
+        </div>
+    </div>
+
 </div>
 
-<!-- Imagen ampliada -->
+<!-- ======================
+   LIGHTBOX PARA CADA IMAGEN
+====================== -->
+
 <div id="img1" class="lightbox">
-    <a href="#">
-        <img src="attractor-voronoi.png" alt="Imagen ampliada">
-    </a>
+    <a href="#"><img src="attractor-voronoi.png" alt="Imagen 1 ampliada"></a>
+</div>
+
+<div id="img2" class="lightbox">
+    <a href="#"><img src="attractor-voronoi.png" alt="Imagen 2 ampliada"></a>
+</div>
+
+<div id="img3" class="lightbox">
+    <a href="#"><img src="attractor-voronoi.png" alt="Imagen 3 ampliada"></a>
+</div>
+
+<div id="img4" class="lightbox">
+    <a href="#"><img src="attractor-voronoi.png" alt="Imagen 4 ampliada"></a>
 </div>
 
 </body>
