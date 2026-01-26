@@ -38,14 +38,6 @@ header {
     z-index: 100;
 }
 
-/* Logo a la izquierda */
-header img {
-    height: 40px;
-    width: auto;
-    margin-right: 20px;
-}
-
-/* Título centrado horizontalmente */
 header h1 {
     margin: 0;
     flex: 1;
@@ -54,9 +46,6 @@ header h1 {
     color: #222;
 }
 
-/* ======================
-   CONTENEDOR VERTICAL
-====================== */
 .container {
     max-width: 1000px;
     margin: 20px auto 40px auto;
@@ -66,17 +55,31 @@ header h1 {
     gap: 30px;
 }
 
-/* ======================
-   TARJETA
-====================== */
 .card {
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* card apaisada */
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    min-height: 220px;
+}
+
+.card img {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.content {
+    padding: 20px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .card:hover {
@@ -97,15 +100,6 @@ header h1 {
     padding: 15px;
 }
 
-.content h2 {
-    margin-top: 0;
-    color: #222;
-}
-
-.content p {
-    color: #555;
-}
-
 .download {
     display: inline-block;
     margin-top: 10px;
@@ -114,16 +108,8 @@ header h1 {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s;
 }
 
-.download:hover {
-    background: #555;
-}
-
-/* ======================
-   LIGHTBOX PREMIUM
-====================== */
 .lightbox {
     position: fixed;
     inset: 0;
@@ -132,7 +118,6 @@ header h1 {
     display: none;
     justify-content: center;
     align-items: center;
-    animation: fadeIn 0.3s ease-in-out;
     z-index: 1000;
 }
 
@@ -140,78 +125,22 @@ header h1 {
     display: flex;
 }
 
-.lightbox a {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .lightbox img {
     max-width: 90%;
     max-height: 90%;
-    box-shadow: 0 0 25px rgba(0,0,0,0.7);
     border-radius: 8px;
-    animation: zoomIn 0.3s ease-in-out;
-}
-
-/* Botón cerrar */
-.lightbox a::after {
-    content: "✕";
-    position: absolute;
-    top: -35px;
-    right: 0;
-    font-size: 32px;
-    color: #fff;
-    text-decoration: none;
-}
-
-/* ======================
-   ANIMACIONES
-====================== */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes zoomIn {
-    from {transform: scale(0.7);}
-    to {transform: scale(1);}
-}
-
-/* ======================
-   RESPONSIVE
-====================== */
-@media (max-width: 768px) {
-    header {
-        justify-content: center;
-        text-align: center;
-    }
-    header img {
-        margin-right: 10px;
-    }
-    .card {
-        width: 100%;
-    }
 }
 </style>
 </head>
-
 <body>
-
-<!-- HEADER FIJA -->
 <header>
     <h1>PARAMETRIZADO</h1>
 </header>
 
-<!-- CONTENEDOR VERTICAL -->
 <div class="container">
 
-    <!-- TARJETA 1 -->
     <div class="card">
-        <a href="#img1">
-            <img src="attractor-voronoi.png" alt="Imagen 1">
-        </a>
+        <a href="#img1"><img src="attractor-voronoi.png" alt="Imagen 1"></a>
         <div class="content">
             <h2>Proyecto 1</h2>
             <p>Descripción de la primera imagen.</p>
@@ -219,63 +148,10 @@ header h1 {
         </div>
     </div>
 
-    <!-- TARJETA 2 -->
-    <div class="card">
-        <a href="#img2">
-            <img src="attractor-voronoi.png" alt="Imagen 2">
-        </a>
-        <div class="content">
-            <h2>Proyecto 2</h2>
-            <p>Descripción de la segunda imagen.</p>
-            <a class="download" href="archivo2.pdf" download>Descargar archivo</a>
-        </div>
-    </div>
-
-    <!-- TARJETA 3 -->
-    <div class="card">
-        <a href="#img3">
-            <img src="attractor-voronoi.png" alt="Imagen 3">
-        </a>
-        <div class="content">
-            <h2>Proyecto 3</h2>
-            <p>Descripción de la tercera imagen.</p>
-            <a class="download" href="archivo3.pdf" download>Descargar archivo</a>
-        </div>
-    </div>
-
-    <!-- TARJETA 4 -->
-    <div class="card">
-        <a href="#img4">
-            <img src="attractor-voronoi.png" alt="Imagen 4">
-        </a>
-        <div class="content">
-            <h2>Proyecto 4</h2>
-            <p>Descripción de la cuarta imagen.</p>
-            <a class="download" href="archivo4.pdf" download>Descargar archivo</a>
-        </div>
-    </div>
-
 </div>
-
-<!-- ======================
-   LIGHTBOX
-====================== -->
 
 <div id="img1" class="lightbox">
-    <a href="#"><img src="attractor-voronoi.png" alt="Imagen 1 ampliada"></a>
+    <a href="#"><img src="attractor-voronoi.png" alt="Imagen ampliada"></a>
 </div>
-
-<div id="img2" class="lightbox">
-    <a href="#"><img src="attractor-voronoi.png" alt="Imagen 2 ampliada"></a>
-</div>
-
-<div id="img3" class="lightbox">
-    <a href="#"><img src="attractor-voronoi.png" alt="Imagen 3 ampliada"></a>
-</div>
-
-<div id="img4" class="lightbox">
-    <a href="#"><img src="attractor-voronoi.png" alt="Imagen 4 ampliada"></a>
-</div>
-
 </body>
 </html>
