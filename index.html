@@ -6,177 +6,184 @@
 <title>PARAMETRIZADO</title>
 
 <style>
-/* ======================
-   FUENTE PERSONALIZADA
-====================== */
+/* ====================== FUENTE ====================== */
 @font-face {
-    font-family: 'Pix32';
-    src: url('fonts/Pix32.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Pix32';
+  src: url('fonts/Pix32.woff2') format('woff2');
+  font-display: swap;
 }
+
+/* ====================== COLORES ====================== */
+:root {
+  --bg: #f4f4f4;
+  --card: #ffffff;
+  --text: #222;
+  --muted: #555;
+  --accent: #555;
+}
+
+/* ====================== BASE ====================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    margin: 0;
-    font-family: 'Pix32', sans-serif;
-    background: #f4f4f4;
-    color: #333;
+  font-family: 'Pix32', sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* ======================
-   HEADER FIJA
-====================== */
+/* ====================== HEADER ====================== */
 header {
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    z-index: 100;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
 }
 
 header h1 {
-    margin: 0;
-    flex: 1;
-    text-align: center;
-    font-size: 1.8rem;
-    color: #222;
+  font-size: 1.8rem;
 }
 
+/* ====================== CONTENEDOR ====================== */
 .container {
-    max-width: 1000px;
-    margin: 20px auto 40px auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
+/* ====================== CARD HORIZONTAL ====================== */
 .card {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row; /* card apaisada */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-    min-height: 220px;
-}
-
-.card img {
-    width: 40%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.content {
-    padding: 20px;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  background: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 180px;
 }
 
 .card:hover {
-    transform: scale(1.01);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
 .card img {
-    width: 100%;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.card img:hover {
-    transform: scale(1.05);
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
 }
 
 .content {
-    padding: 15px;
+  width: 60%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content h2 {
+  margin-bottom: 6px;
+}
+
+.content p {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .download {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 16px;
-    background: #888;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 14px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background 0.25s ease;
 }
 
+.download:hover {
+  background: #000;
+}
+
+/* ====================== LIGHTBOX ====================== */
 .lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(5px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .lightbox:target {
-    display: flex;
+  display: flex;
 }
 
 .lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+
+.lightbox::after {
+  content: "✕";
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ====================== RESPONSIVE ====================== */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .card img, .content {
+    width: 100%;
+  }
+
+  .content {
+    padding: 12px;
+  }
 }
 </style>
 </head>
+
 <body>
+
 <header>
-    <h1>PARAMETRIZADO</h1>
+  <h1>PARAMETRIZADO</h1>
 </header>
 
 <div class="container">
 
-    <div class="card">
-        <a href="#img1"><img src="attractor-voronoi.png" alt="Imagen 1"></a>
-        <div class="content">
-            <h2>Proyecto 1</h2>
-            <p>Descripción de la primera imagen.</p>
-            <a class="download" href="archivo1.pdf" download>Descargar archivo</a>
-            
-    <div class="card">
-        <a href="#img2"><img src="attractor-voronoi.png" alt="Imagen 2"></a>
-        <div class="content">
-            <h2>Proyecto 2</h2>
-            <p>Descripción del segundo proyecto.</p>
-            <a class="download" href="archivo2.pdf" download>Descargar archivo</a>
-        </div>
+  <!-- CARD 1 -->
+  <div class="card">
+    <a href="#img1"><img src="attractor-voronoi.png" alt="Proyecto 1"></a>
+    <div class="content">
+      <h2>Proyecto 1</h2>
+      <p>Descripción de la primera imagen.</p>
+      <a class="download" href="archivo1.pdf" download>Descargar</a>
     </div>
+  </div>
 
-    <div class="card">
-        <a href="#img3"><img src="attractor-voronoi.png" alt="Imagen 3"></a>
-        <div class="content">
-            <h2>Proyecto 3</h2>
-            <p>Descripción del tercer proyecto.</p>
-            <a class="download" href="archivo3.pdf" download>Descargar archivo</a>
-        </div>
-    </div>
-
-</div>
-
-</div>
-
-<div id="img1" class="lightbox">
-    <a href="#"><img src="attractor-voronoi.png" alt="Imagen ampliada"></a>
-<div id="img2" class="lightbox">
-    <a href="#"><img src="attractor-voronoi.png" alt="Imagen 2 ampliada"></a>
-</div>
-
-<div id="img3" class="lightbox">
-    <a href="#"><img src="attractor-voronoi.png" alt="Imagen 3 ampliada"></a>
-</div>
-
-</body>
-</html>
+  <!-- CARD 2 -->
+  <div class="card">
+    <a href="#img2"><img src="attractor-voronoi.png" alt="Proyecto 2">
